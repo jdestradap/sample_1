@@ -1,0 +1,1265 @@
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (3.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (1.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110617165851)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255) NOT NULL, "last_name" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110617165851')
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110617165851)
+Migrating to CreateCompanies (20110801205908)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "realm" varchar(255), "owner_id" integer, "intuit_access_token" varchar(255), "intuit_access_secret" varchar(255), "is_qbo" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  CREATE TABLE "companies_users" ("user_id" integer, "company_id" integer) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110801205908')[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("companies")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("companies_users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-18 16:41:19 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = 'c365065821d640e6eec525a2bd604fe17425f1c4aefbc2aee420896ee0c4d30c9f07442937e204aa403d403bfb810103b3b9b9ca5c35bdadfa7ab62eb5787406' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+DEPRECATION WARNING: Using #request_uri is deprecated. Use fullpath instead. (called from store_location at /Users/jdestradap/more_samples/IntuitAnywhere-Ruby/customer.com/app/controllers/application_controller.rb:36)
+Redirected to http://0.0.0.0:3000/login
+Completed 302 Found in 172ms
+
+
+Started GET "/login" for 127.0.0.1 at 2012-11-18 16:41:19 -0500
+  Processing by UserSessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = 'c365065821d640e6eec525a2bd604fe17425f1c4aefbc2aee420896ee0c4d30c9f07442937e204aa403d403bfb810103b3b9b9ca5c35bdadfa7ab62eb5787406' LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered user_sessions/new.html.erb within layouts/login (200.5ms)
+Completed 200 OK in 296ms (Views: 204.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2012-11-18 16:41:23 -0500
+  Processing by UsersController#new as HTML
+Rendered users/new.html.erb within layouts/login (117.7ms)
+Completed 200 OK in 202ms (Views: 156.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2012-11-18 16:41:37 -0500
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e40wTlBbnqRCRhnOFK8LvJtVE8pwS6wj1LWn1GQ3xfA=", "user"=>{"first_name"=>"Juan", "last_name"=>"Estrada", "email"=>"jdestradap@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('jdestradap@gmail.com')) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."persistence_token" = '5799baea4a78332ba242eead7576ffbf8b2ec1da1b0b5f08771f1ff4a28876f74bb23c1515ae12904d8499e7273a22927cd66744907b4b52cc6f33a346242d99') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "users" WHERE ("users"."single_access_token" = '0bdG5TzTylWlnXLbnLw') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = 'c365065821d640e6eec525a2bd604fe17425f1c4aefbc2aee420896ee0c4d30c9f07442937e204aa403d403bfb810103b3b9b9ca5c35bdadfa7ab62eb5787406' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "crypted_password", "password_salt", "persistence_token", "single_access_token", "perishable_token", "created_at", "updated_at") VALUES ('Juan', 'Estrada', 'jdestradap@gmail.com', 'f378d749c19039d75bb08dc34c446aca2f153e4fb0a236317d03e1c76b161eff6eabafb47d70af99d5a3a1922346d490c1e2cba7be787e593db7876c1fa05a0f', '0Wo5Y78wkeTt7RYDSPxx', '5799baea4a78332ba242eead7576ffbf8b2ec1da1b0b5f08771f1ff4a28876f74bb23c1515ae12904d8499e7273a22927cd66744907b4b52cc6f33a346242d99', '0bdG5TzTylWlnXLbnLw', 'xL5S1yERQCy4H16JO5oI', '2012-11-18 21:41:37.256677', '2012-11-18 21:41:37.256677')[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 141ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-18 16:41:37 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '5799baea4a78332ba242eead7576ffbf8b2ec1da1b0b5f08771f1ff4a28876f74bb23c1515ae12904d8499e7273a22927cd66744907b4b52cc6f33a346242d99' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '5799baea4a78332ba242eead7576ffbf8b2ec1da1b0b5f08771f1ff4a28876f74bb23c1515ae12904d8499e7273a22927cd66744907b4b52cc6f33a346242d99' LIMIT 1[0m
+Completed 500 Internal Server Error in 106ms
+
+NoMethodError (undefined method `intuit_access_token?' for #<User:0x007fc923f844d8>):
+  app/models/user.rb:16:in `connected_to_intuit?'
+  app/controllers/home_controller.rb:6:in `index'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.8ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "users"
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-18 16:53:44 -0500
+  Processing by HomeController#index as HTML
+DEPRECATION WARNING: Using #request_uri is deprecated. Use fullpath instead. (called from store_location at /Users/jdestradap/more_samples/IntuitAnywhere-Ruby/customer.com/app/controllers/application_controller.rb:36)
+Redirected to http://0.0.0.0:3000/login
+Completed 302 Found in 104ms
+
+
+Started GET "/login" for 127.0.0.1 at 2012-11-18 16:53:44 -0500
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/login (199.2ms)
+Completed 200 OK in 253ms (Views: 203.5ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (4.0ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "realm" varchar(255), "owner_id" integer, "intuit_access_token" varchar(255), "intuit_access_secret" varchar(255), "is_qbo" boolean, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.2ms)[0m  CREATE TABLE "companies_users" ("user_id" integer, "company_id" integer) 
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255) NOT NULL, "last_name" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (0.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110801205908')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110617165851')
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-18 17:15:15 -0500
+  Processing by HomeController#index as HTML
+DEPRECATION WARNING: Using #request_uri is deprecated. Use fullpath instead. (called from store_location at /Users/jdestradap/more_samples/IntuitAnywhere-Ruby/customer.com/app/controllers/application_controller.rb:36)
+Redirected to http://0.0.0.0:3000/login
+Completed 302 Found in 110ms
+
+
+Started GET "/login" for 127.0.0.1 at 2012-11-18 17:15:15 -0500
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/login (198.3ms)
+Completed 200 OK in 252ms (Views: 202.4ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/signup" for 127.0.0.1 at 2012-11-18 17:16:39 -0500
+  Processing by UsersController#new as HTML
+Rendered users/new.html.erb within layouts/login (114.6ms)
+Completed 200 OK in 163ms (Views: 118.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2012-11-18 17:17:12 -0500
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CZD46HPjYUZ7LfYuVXsvQoAV/2IwK6Z3BYihLVmYzdQ=", "user"=>{"first_name"=>"Juan", "last_name"=>"Estrada", "email"=>"jdestradap@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('jdestradap@gmail.com')) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "users" WHERE ("users"."persistence_token" = 'ad0b02e1657e535a80ca456b83dbc63a9fcbe2d6c07f7797142eddafcf4ba4a9c84be1719caab68362fba44455107047f64fcc88d93851767d4433d3beda0349') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."single_access_token" = 'i97IyN5nYslr7Lsv34m3') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "crypted_password", "password_salt", "persistence_token", "single_access_token", "perishable_token", "created_at", "updated_at") VALUES ('Juan', 'Estrada', 'jdestradap@gmail.com', 'bcff60b9975e5dc1ed9fac5d6de71c73caca52a39999cded492485c2f5e43f7e4e40364c9eaad154315a5c4eacd8fb8f116d4cc695d59b1fcd8a80bb890520db', 'ky8Btjv3GjcGRO7iADwM', 'ad0b02e1657e535a80ca456b83dbc63a9fcbe2d6c07f7797142eddafcf4ba4a9c84be1719caab68362fba44455107047f64fcc88d93851767d4433d3beda0349', 'i97IyN5nYslr7Lsv34m3', '8c9uwajy0MO6ISEFSGB', '2012-11-18 22:17:12.949187', '2012-11-18 22:17:12.949187')[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 268ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-18 17:17:13 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = 'ad0b02e1657e535a80ca456b83dbc63a9fcbe2d6c07f7797142eddafcf4ba4a9c84be1719caab68362fba44455107047f64fcc88d93851767d4433d3beda0349' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = 'ad0b02e1657e535a80ca456b83dbc63a9fcbe2d6c07f7797142eddafcf4ba4a9c84be1719caab68362fba44455107047f64fcc88d93851767d4433d3beda0349' LIMIT 1[0m
+Completed 500 Internal Server Error in 109ms
+
+NoMethodError (undefined method `intuit_access_token?' for #<User:0x007fd9a34603f0>):
+  app/models/user.rb:16:in `connected_to_intuit?'
+  app/controllers/home_controller.rb:6:in `index'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (37.5ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (45.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-18 18:15:31 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '5799baea4a78332ba242eead7576ffbf8b2ec1da1b0b5f08771f1ff4a28876f74bb23c1515ae12904d8499e7273a22927cd66744907b4b52cc6f33a346242d99' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '5799baea4a78332ba242eead7576ffbf8b2ec1da1b0b5f08771f1ff4a28876f74bb23c1515ae12904d8499e7273a22927cd66744907b4b52cc6f33a346242d99' LIMIT 1[0m
+DEPRECATION WARNING: Using #request_uri is deprecated. Use fullpath instead. (called from store_location at /Users/jdestradap/more_samples/IntuitAnywhere-Ruby/customer.com/app/controllers/application_controller.rb:36)
+Redirected to http://0.0.0.0:3000/login
+Completed 302 Found in 152ms
+
+
+Started GET "/login" for 127.0.0.1 at 2012-11-18 18:15:31 -0500
+  Processing by UserSessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '5799baea4a78332ba242eead7576ffbf8b2ec1da1b0b5f08771f1ff4a28876f74bb23c1515ae12904d8499e7273a22927cd66744907b4b52cc6f33a346242d99' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '5799baea4a78332ba242eead7576ffbf8b2ec1da1b0b5f08771f1ff4a28876f74bb23c1515ae12904d8499e7273a22927cd66744907b4b52cc6f33a346242d99' LIMIT 1[0m
+Rendered user_sessions/new.html.erb within layouts/login (212.3ms)
+Completed 200 OK in 274ms (Views: 217.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-18 18:17:47 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '5799baea4a78332ba242eead7576ffbf8b2ec1da1b0b5f08771f1ff4a28876f74bb23c1515ae12904d8499e7273a22927cd66744907b4b52cc6f33a346242d99' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '5799baea4a78332ba242eead7576ffbf8b2ec1da1b0b5f08771f1ff4a28876f74bb23c1515ae12904d8499e7273a22927cd66744907b4b52cc6f33a346242d99' LIMIT 1[0m
+DEPRECATION WARNING: Using #request_uri is deprecated. Use fullpath instead. (called from store_location at /Users/jdestradap/more_samples/IntuitAnywhere-Ruby/customer.com/app/controllers/application_controller.rb:36)
+Redirected to http://0.0.0.0:3000/login
+Completed 302 Found in 61ms
+
+
+Started GET "/login" for 127.0.0.1 at 2012-11-18 18:17:47 -0500
+  Processing by UserSessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '5799baea4a78332ba242eead7576ffbf8b2ec1da1b0b5f08771f1ff4a28876f74bb23c1515ae12904d8499e7273a22927cd66744907b4b52cc6f33a346242d99' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '5799baea4a78332ba242eead7576ffbf8b2ec1da1b0b5f08771f1ff4a28876f74bb23c1515ae12904d8499e7273a22927cd66744907b4b52cc6f33a346242d99' LIMIT 1[0m
+Rendered user_sessions/new.html.erb within layouts/login (70.2ms)
+Completed 200 OK in 131ms (Views: 74.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2012-11-18 18:17:49 -0500
+  Processing by UsersController#new as HTML
+Rendered users/new.html.erb within layouts/login (123.8ms)
+Completed 200 OK in 204ms (Views: 129.9ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/login" for 127.0.0.1 at 2012-11-18 18:18:04 -0500
+  Processing by UserSessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '5799baea4a78332ba242eead7576ffbf8b2ec1da1b0b5f08771f1ff4a28876f74bb23c1515ae12904d8499e7273a22927cd66744907b4b52cc6f33a346242d99' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '5799baea4a78332ba242eead7576ffbf8b2ec1da1b0b5f08771f1ff4a28876f74bb23c1515ae12904d8499e7273a22927cd66744907b4b52cc6f33a346242d99' LIMIT 1[0m
+Rendered user_sessions/new.html.erb within layouts/login (38.6ms)
+Completed 200 OK in 137ms (Views: 42.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2012-11-18 18:18:11 -0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e40wTlBbnqRCRhnOFK8LvJtVE8pwS6wj1LWn1GQ3xfA=", "user_session"=>{"email"=>"jdestradap@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '5799baea4a78332ba242eead7576ffbf8b2ec1da1b0b5f08771f1ff4a28876f74bb23c1515ae12904d8499e7273a22927cd66744907b4b52cc6f33a346242d99' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '5799baea4a78332ba242eead7576ffbf8b2ec1da1b0b5f08771f1ff4a28876f74bb23c1515ae12904d8499e7273a22927cd66744907b4b52cc6f33a346242d99' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users".email LIKE 'jdestradap@gmail.com') LIMIT 1
+  [1m[36mAREL (0.5ms)[0m  [1mUPDATE "users" SET "perishable_token" = 'IF0hbPbLmtk4j7LBu13', "updated_at" = '2012-11-18 23:18:12.093237' WHERE "users"."id" = 1[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 130ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-18 18:18:12 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 547379ms
+
+NoMethodError (undefined method `intuit_access_token?' for #<User:0x007fe049d31dd8>):
+  app/models/user.rb:16:in `connected_to_intuit?'
+  app/controllers/home_controller.rb:9:in `index'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (40.5ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (50.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-18 18:27:35 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 11936ms
+
+NoMethodError (undefined method `intuit_access_token?' for #<User:0x007fe04b582b58>):
+  app/models/user.rb:16:in `connected_to_intuit?'
+  app/controllers/home_controller.rb:9:in `index'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.3ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-18 18:28:16 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 9532ms
+
+NoMethodError (undefined method `intuit_access_token?' for #<User:0x007fe04b7df1a8>):
+  app/models/user.rb:16:in `connected_to_intuit?'
+  app/controllers/home_controller.rb:9:in `index'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.4ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-18 18:38:22 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+DEPRECATION WARNING: Using #request_uri is deprecated. Use fullpath instead. (called from store_location at /Users/jdestradap/more_samples/IntuitAnywhere-Ruby/customer.com/app/controllers/application_controller.rb:36)
+Redirected to http://0.0.0.0:3000/login
+Completed 302 Found in 105ms
+
+
+Started GET "/login" for 127.0.0.1 at 2012-11-18 18:38:22 -0500
+  Processing by UserSessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered user_sessions/new.html.erb within layouts/login (46.1ms)
+Completed 200 OK in 158ms (Views: 49.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2012-11-18 18:38:47 -0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CZD46HPjYUZ7LfYuVXsvQoAV/2IwK6Z3BYihLVmYzdQ=", "user_session"=>{"email"=>"jdestradap@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users".email LIKE 'jdestradap@gmail.com') LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "users" SET "perishable_token" = 'AwKc6rCq3OnxNeonGgb', "updated_at" = '2012-11-18 23:38:47.906892' WHERE "users"."id" = 1[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 126ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-18 18:38:47 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 167061ms
+
+NoMethodError (undefined method `intuit_access_token?' for #<User:0x007fe04b3ee760>):
+  app/models/user.rb:16:in `connected_to_intuit?'
+  app/controllers/home_controller.rb:9:in `index'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.6ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-18 18:42:23 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 707809ms
+
+NoMethodError (undefined method `intuit_access_token?' for #<User:0x007fe04c116870>):
+  app/models/user.rb:16:in `connected_to_intuit?'
+  app/controllers/home_controller.rb:9:in `index'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.7ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-18 18:54:14 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 132256ms
+
+NoMethodError (undefined method `intuit_access_token?' for #<User:0x007fe049e71a18>):
+  app/models/user.rb:17:in `connected_to_intuit?'
+  app/controllers/home_controller.rb:9:in `index'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.9ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 09:12:31 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 2549346ms
+
+NoMethodError (undefined method `intuit_access_token?' for #<User:0x007ff7cd5dea90>):
+  app/models/user.rb:17:in `connected_to_intuit?'
+  app/controllers/home_controller.rb:9:in `index'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.1ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 09:55:00 -0500
+  Processing by HomeController#index as HTML
+DEPRECATION WARNING: Using #request_uri is deprecated. Use fullpath instead. (called from store_location at /Users/jdestradap/more_samples/IntuitAnywhere-Ruby/customer.com/app/controllers/application_controller.rb:36)
+Redirected to http://0.0.0.0:3000/login
+Completed 302 Found in 94ms
+
+
+Started GET "/login" for 127.0.0.1 at 2012-11-19 09:55:01 -0500
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/login (365.8ms)
+Completed 200 OK in 427ms (Views: 370.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2012-11-19 09:55:12 -0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KGnVvsnKtn3QdFusxBSmioWGgYa8kD6528CvB7Wj8os=", "user_session"=>{"email"=>"jdestradap@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users".email LIKE 'jdestradap@gmail.com') LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "users" SET "perishable_token" = 'WthlB1ELFJD9C0v6yCLj', "updated_at" = '2012-11-19 14:55:13.117439' WHERE "users"."id" = 1[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 133ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 09:55:13 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 32256ms
+
+NoMethodError (undefined method `intuit_access_token?' for #<User:0x007ff7cd5c9640>):
+  app/models/user.rb:17:in `connected_to_intuit?'
+  app/controllers/home_controller.rb:9:in `index'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.5ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 10:33:51 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 32089ms
+
+NoMethodError (undefined method `intuit_access_token?' for #<User:0x007fad472ef990>):
+  app/models/user.rb:26:in `connected_to_intuit?'
+  app/controllers/home_controller.rb:9:in `index'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.2ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 10:49:01 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 143512ms
+
+NoMethodError (undefined method `intuit_access_token?' for #<User:0x007fad45262f60>):
+  app/models/user.rb:26:in `connected_to_intuit?'
+  app/controllers/home_controller.rb:9:in `index'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.7ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 14:09:47 -0500
+  Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 7ms
+
+NameError (undefined local variable or method `intuit_xrds_url' for #<HomeController:0x007fd38444e6c0>):
+  app/controllers/home_controller.rb:33:in `login_with_xrds'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.6ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 14:25:21 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/account
+Completed 302 Found in 34251ms
+
+
+Started GET "/account" for 127.0.0.1 at 2012-11-19 14:25:55 -0500
+  Processing by UsersController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (9504.4ms)
+Completed 200 OK in 9613ms (Views: 9508.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/account" for 127.0.0.1 at 2012-11-19 14:26:18 -0500
+  Processing by UsersController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (10312.1ms)
+Completed 200 OK in 10422ms (Views: 10316.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2012-11-19 14:26:28 -0500
+  Processing by UserSessionsController#destroy as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/login
+Completed 302 Found in 116ms
+
+
+Started GET "/login" for 127.0.0.1 at 2012-11-19 14:26:29 -0500
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/login (122.6ms)
+Completed 200 OK in 191ms (Views: 126.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2012-11-19 14:26:38 -0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e40wTlBbnqRCRhnOFK8LvJtVE8pwS6wj1LWn1GQ3xfA=", "user_session"=>{"email"=>"jdestradap@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users".email LIKE 'jdestradap@gmail.com') LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "users" SET "perishable_token" = '1PVawlQA20WpLoS5mNZJ', "updated_at" = '2012-11-19 19:26:38.636919' WHERE "users"."id" = 1[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 127ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 14:26:38 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/account
+Completed 302 Found in 8068ms
+
+
+Started GET "/account" for 127.0.0.1 at 2012-11-19 14:26:46 -0500
+  Processing by UsersController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (2863.2ms)
+Completed 200 OK in 2972ms (Views: 2866.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/account" for 127.0.0.1 at 2012-11-19 14:26:57 -0500
+  Processing by UsersController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (4323.2ms)
+Completed 200 OK in 4435ms (Views: 4327.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/intuit/connect" for 127.0.0.1 at 2012-11-19 14:27:06 -0500
+  Processing by IntuitController#connect as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to https://appcenter.intuit.com/Connect/Begin?oauth_token=qyprdCtF55nXmQHImAgw31lHP72jGDj8G0T72kRgHVTqLKyx
+Completed 302 Found in 1666ms
+
+
+Started GET "/intuit/callback?oauth_token=qyprdCtF55nXmQHImAgw31lHP72jGDj8G0T72kRgHVTqLKyx&oauth_verifier=z5h44gu&realmId=547147730&dataSource=QBO" for 127.0.0.1 at 2012-11-19 14:27:26 -0500
+  Processing by IntuitController#callback as HTML
+  Parameters: {"oauth_token"=>"qyprdCtF55nXmQHImAgw31lHP72jGDj8G0T72kRgHVTqLKyx", "oauth_verifier"=>"z5h44gu", "realmId"=>"547147730", "dataSource"=>"QBO"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCompany Load (0.2ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."realm" = '547147730' LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "companies" ("name", "realm", "owner_id", "intuit_access_token", "intuit_access_secret", "is_qbo", "created_at", "updated_at") VALUES ('', '547147730', 1, 'lvprdV3E7APqjAvTRWkqbdFLS7jzKkFZVgA2hqi4uj1ooksk', '30lRICzZdgV3qbISP6qdV1x9LOtA6to77R5bH5oD', 't', '2012-11-19 19:27:28.186102', '2012-11-19 19:27:28.186102')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "companies_users" ("user_id", "company_id") VALUES (1, 1)
+  [1m[36mAREL (1.1ms)[0m  [1mUPDATE "companies" SET "name" = 'TimeStackCompany', "updated_at" = '2012-11-19 19:27:37.212154' WHERE "companies"."id" = 1[0m
+Rendered intuit/callback.html.erb (1.5ms)
+Completed 200 OK in 10633ms (Views: 5.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/company/1" for 127.0.0.1 at 2012-11-19 14:27:37 -0500
+  Processing by CompanyController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCompany Load (0.3ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 1 LIMIT 1
+Rendered company/show.html.erb (12692.9ms)
+Completed 200 OK in 15317ms (Views: 12695.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/company/1/customers" for 127.0.0.1 at 2012-11-19 14:27:52 -0500
+  Processing by CompanyController#customers as 
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.3ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 43ms
+
+Errno::ECONNREFUSED (Connection refused - Unable to connect to Redis on localhost:6379):
+  app/controllers/company_controller.rb:33:in `customers'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.9ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.0ms)
+
+
+Started GET "/company/1" for 127.0.0.1 at 2012-11-19 14:39:15 -0500
+  Processing by CompanyController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mCompany Load (0.2ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 1 LIMIT 1
+Rendered company/show.html.erb (14295.0ms)
+Completed 200 OK in 73960ms (Views: 14298.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/company/1/customers" for 127.0.0.1 at 2012-11-19 14:40:29 -0500
+  Processing by CompanyController#customers as 
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (0.2ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 79ms
+
+Errno::ECONNREFUSED (Connection refused - Unable to connect to Redis on localhost:6379):
+  app/controllers/company_controller.rb:33:in `customers'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.5ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.1ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2012-11-19 14:40:47 -0500
+  Processing by UserSessionsController#destroy as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/login
+Completed 302 Found in 118ms
+
+
+Started GET "/login" for 127.0.0.1 at 2012-11-19 14:40:47 -0500
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/login (115.5ms)
+Completed 200 OK in 207ms (Views: 119.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2012-11-19 14:40:52 -0500
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/login (43.4ms)
+Completed 200 OK in 137ms (Views: 47.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2012-11-19 14:40:53 -0500
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/login (76.8ms)
+Completed 200 OK in 131ms (Views: 80.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2012-11-19 14:40:54 -0500
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/login (77.2ms)
+Completed 200 OK in 131ms (Views: 80.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2012-11-19 14:41:00 -0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e40wTlBbnqRCRhnOFK8LvJtVE8pwS6wj1LWn1GQ3xfA=", "user_session"=>{"email"=>"jdestradap@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users".email LIKE 'jdestradap@gmail.com') LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "users" SET "perishable_token" = 'OOriwpSzrhmSP6rYOOeg', "updated_at" = '2012-11-19 19:41:00.599082' WHERE "users"."id" = 1[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 126ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 14:41:00 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 15156ms
+
+NoMethodError (undefined method `intuit_oauth_access_token' for #<User:0x007f9382873260>):
+  app/controllers/application_controller.rb:46:in `intuit_token'
+  app/controllers/home_controller.rb:9:in `index'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.5ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 14:46:21 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 12999ms
+
+NoMethodError (undefined method `intuit_oauth_access_token' for #<User:0x007f9383f393a0>):
+  app/controllers/application_controller.rb:46:in `intuit_token'
+  app/controllers/home_controller.rb:9:in `index'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.6ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.2ms)
+  [1m[36mCompany Load (0.3ms)[0m  [1mSELECT "companies".* FROM "companies"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mCompany Load (0.2ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCompany Load (0.2ms)[0m  [1mSELECT * FROM "companies" INNER JOIN "companies_users" ON "companies".id = "companies_users".company_id WHERE ("companies_users".user_id = 1 )[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (3.8ms)[0m  [1mDELETE FROM "users" WHERE 1=1[0m
+  [1m[35mAREL (49.6ms)[0m  DELETE FROM "companies" WHERE 1=1
+  [1m[36mAREL (0.3ms)[0m  [1mDELETE FROM "companies" WHERE 1=1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.6ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 16:11:42 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+DEPRECATION WARNING: Using #request_uri is deprecated. Use fullpath instead. (called from store_location at /Users/jdestradap/more_samples/IntuitAnywhere-Ruby/customer.com/app/controllers/application_controller.rb:36)
+Redirected to http://0.0.0.0:3000/login
+Completed 302 Found in 161ms
+
+
+Started GET "/login" for 127.0.0.1 at 2012-11-19 16:11:43 -0500
+  Processing by UserSessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered user_sessions/new.html.erb within layouts/login (400.1ms)
+Completed 200 OK in 463ms (Views: 407.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2012-11-19 16:11:46 -0500
+  Processing by UsersController#new as HTML
+Rendered users/new.html.erb within layouts/login (130.3ms)
+Completed 200 OK in 183ms (Views: 136.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2012-11-19 16:12:05 -0500
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e40wTlBbnqRCRhnOFK8LvJtVE8pwS6wj1LWn1GQ3xfA=", "user"=>{"first_name"=>"Juan", "last_name"=>"Estrada", "email"=>"jdestradap@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('jdestradap@gmail.com')) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."persistence_token" = '92cfb8cf479be7192058f59da53d3444e5595eae74f5424fc0ba511b42549e28786644ca42e7e410f00fd1476fa873693bc6ba2fe3bb1e2987628d34b322b6c5') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "users" WHERE ("users"."single_access_token" = 'my5SaDS5lEN3N8PG62Ov') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "crypted_password", "password_salt", "persistence_token", "single_access_token", "perishable_token", "created_at", "updated_at") VALUES ('Juan', 'Estrada', 'jdestradap@gmail.com', '22493662aa4ef78dec437d7fea5cf51d15f3acb967b1fab516a50ef62112dbee7bfbcfccbd4fa1cd1f1c5dfe5baef4ee9cf1bc40665271241004c3cf4aa4ae15', '3YHI5K2qtyfGG37as5Ez', '92cfb8cf479be7192058f59da53d3444e5595eae74f5424fc0ba511b42549e28786644ca42e7e410f00fd1476fa873693bc6ba2fe3bb1e2987628d34b322b6c5', 'my5SaDS5lEN3N8PG62Ov', 'ldK690B72XHAqrRcliDo', '2012-11-19 21:12:05.934711', '2012-11-19 21:12:05.934711')[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 153ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 16:12:05 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '92cfb8cf479be7192058f59da53d3444e5595eae74f5424fc0ba511b42549e28786644ca42e7e410f00fd1476fa873693bc6ba2fe3bb1e2987628d34b322b6c5' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '92cfb8cf479be7192058f59da53d3444e5595eae74f5424fc0ba511b42549e28786644ca42e7e410f00fd1476fa873693bc6ba2fe3bb1e2987628d34b322b6c5' LIMIT 1[0m
+Completed 500 Internal Server Error in 40316ms
+
+NameError (undefined local variable or method `company' for #<User:0x007fcf49655ca0>):
+  app/models/user.rb:25:in `connected_to_intuit?'
+  app/controllers/home_controller.rb:9:in `index'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.3ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 16:12:58 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '92cfb8cf479be7192058f59da53d3444e5595eae74f5424fc0ba511b42549e28786644ca42e7e410f00fd1476fa873693bc6ba2fe3bb1e2987628d34b322b6c5' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '92cfb8cf479be7192058f59da53d3444e5595eae74f5424fc0ba511b42549e28786644ca42e7e410f00fd1476fa873693bc6ba2fe3bb1e2987628d34b322b6c5' LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/account
+Completed 302 Found in 7583ms
+
+
+Started GET "/account" for 127.0.0.1 at 2012-11-19 16:13:06 -0500
+  Processing by UsersController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '92cfb8cf479be7192058f59da53d3444e5595eae74f5424fc0ba511b42549e28786644ca42e7e410f00fd1476fa873693bc6ba2fe3bb1e2987628d34b322b6c5' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 120ms (Views: 11.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/account" for 127.0.0.1 at 2012-11-19 16:13:38 -0500
+  Processing by UsersController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '92cfb8cf479be7192058f59da53d3444e5595eae74f5424fc0ba511b42549e28786644ca42e7e410f00fd1476fa873693bc6ba2fe3bb1e2987628d34b322b6c5' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 119ms (Views: 9.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/intuit/connect" for 127.0.0.1 at 2012-11-19 16:13:43 -0500
+  Processing by IntuitController#connect as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '92cfb8cf479be7192058f59da53d3444e5595eae74f5424fc0ba511b42549e28786644ca42e7e410f00fd1476fa873693bc6ba2fe3bb1e2987628d34b322b6c5' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Redirected to https://appcenter.intuit.com/Connect/Begin?oauth_token=qyprdftQ8dCoGmSzetMKDhsMmtGV3ZdGgUqFucBslxn9IEzj
+Completed 302 Found in 1916ms
+
+
+Started GET "/intuit/callback?oauth_token=qyprdftQ8dCoGmSzetMKDhsMmtGV3ZdGgUqFucBslxn9IEzj&oauth_verifier=qmrgrii&realmId=547147730&dataSource=QBO" for 127.0.0.1 at 2012-11-19 16:13:59 -0500
+  Processing by IntuitController#callback as HTML
+  Parameters: {"oauth_token"=>"qyprdftQ8dCoGmSzetMKDhsMmtGV3ZdGgUqFucBslxn9IEzj", "oauth_verifier"=>"qmrgrii", "realmId"=>"547147730", "dataSource"=>"QBO"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '92cfb8cf479be7192058f59da53d3444e5595eae74f5424fc0ba511b42549e28786644ca42e7e410f00fd1476fa873693bc6ba2fe3bb1e2987628d34b322b6c5' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mCompany Load (0.2ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."realm" = '547147730' LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "companies" ("name", "realm", "owner_id", "intuit_access_token", "intuit_access_secret", "is_qbo", "created_at", "updated_at") VALUES ('', '547147730', 2, 'lvprdGXmETdjVZEMus5KkMJCyxY9Ru8Q5RmDJnVeIs2QJ6tf', 'AciCPcUQJfIsiN0wIeWvaZ77LCwVY92Nj6BAPRls', 't', '2012-11-19 21:14:01.398975', '2012-11-19 21:14:01.398975')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "companies_users" ("user_id", "company_id") VALUES (2, 2)
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "companies" SET "name" = 'TimeStackCompany', "updated_at" = '2012-11-19 21:14:19.904309' WHERE "companies"."id" = 2[0m
+Rendered intuit/callback.html.erb (1.2ms)
+Completed 200 OK in 20050ms (Views: 5.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/company/2" for 127.0.0.1 at 2012-11-19 16:14:19 -0500
+  Processing by CompanyController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.3ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered company/show.html.erb (15708.6ms)
+Completed 200 OK in 24204ms (Views: 15713.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/company/2/customers" for 127.0.0.1 at 2012-11-19 16:14:44 -0500
+  Processing by CompanyController#customers as 
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.2ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Completed 500 Internal Server Error in 40ms
+
+Errno::ECONNREFUSED (Connection refused - Unable to connect to Redis on localhost:6379):
+  app/controllers/company_controller.rb:33:in `customers'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.8ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.8ms)
+
+
+Started GET "/company/2/proxy?1353359722338" for 127.0.0.1 at 2012-11-19 16:15:22 -0500
+  Processing by CompanyController#proxy as 
+  Parameters: {"1353359722338"=>nil, "id"=>"2"}
+  [1m[35mCompany Load (0.2ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered text template (0.0ms)
+Completed 200 OK in 9159ms (Views: 8.2ms | ActiveRecord: 0.2ms)
+  [1m[36mUser Load (4.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies"
+
+
+Started GET "/logout" for 127.0.0.1 at 2012-11-19 16:29:08 -0500
+  Processing by UserSessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '92cfb8cf479be7192058f59da53d3444e5595eae74f5424fc0ba511b42549e28786644ca42e7e410f00fd1476fa873693bc6ba2fe3bb1e2987628d34b322b6c5' LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Redirected to http://0.0.0.0:3000/login
+Completed 302 Found in 75ms
+
+
+Started GET "/login" for 127.0.0.1 at 2012-11-19 16:29:08 -0500
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/login (73.8ms)
+Completed 200 OK in 130ms (Views: 77.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2012-11-19 16:29:11 -0500
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/login (78.2ms)
+Completed 200 OK in 149ms (Views: 82.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2012-11-19 16:29:16 -0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e40wTlBbnqRCRhnOFK8LvJtVE8pwS6wj1LWn1GQ3xfA=", "user_session"=>{"email"=>"jdestradap@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users".email LIKE 'jdestradap@gmail.com') LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  UPDATE "users" SET "perishable_token" = 'KvyLW3tVGutmwqENI', "updated_at" = '2012-11-19 21:29:16.690986' WHERE "users"."id" = 2
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 114ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 16:29:16 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed 500 Internal Server Error in 6262ms
+
+NoMethodError (undefined method `intuit_access_token?' for #<User:0x007fcf494cdf40>):
+  app/models/user.rb:27:in `connected_to_intuit?'
+  app/controllers/home_controller.rb:9:in `index'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.9ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (49.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 16:31:08 -0500
+
+SyntaxError (/Users/jdestradap/more_samples/IntuitAnywhere-Ruby/customer.com/app/controllers/home_controller.rb:45: syntax error, unexpected $end, expecting keyword_end
+  #   end
+         ^):
+  
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.4ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 16:31:29 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mCompany Load (0.3ms)[0m  [1mSELECT * FROM "companies" INNER JOIN "companies_users" ON "companies".id = "companies_users".company_id WHERE ("companies_users".user_id = 2 )[0m
+Rendered home/index.html.erb within layouts/application (83.4ms)
+Completed 200 OK in 6084ms (Views: 90.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/company/2" for 127.0.0.1 at 2012-11-19 16:31:46 -0500
+  Processing by CompanyController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCompany Load (0.2ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1
+Rendered company/show.html.erb (6803.9ms)
+Completed 200 OK in 12987ms (Views: 6806.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/company/2/customers" for 127.0.0.1 at 2012-11-19 16:31:59 -0500
+  Processing by CompanyController#customers as 
+  Parameters: {"id"=>"2"}
+  [1m[36mCompany Load (0.3ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 2 LIMIT 1[0m
+Completed 500 Internal Server Error in 82ms
+
+Errno::ECONNREFUSED (Connection refused - Unable to connect to Redis on localhost:6379):
+  app/controllers/company_controller.rb:33:in `customers'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.2ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.9ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2012-11-19 16:32:03 -0500
+  Processing by UserSessionsController#destroy as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/login
+Completed 302 Found in 113ms
+
+
+Started GET "/login" for 127.0.0.1 at 2012-11-19 16:32:03 -0500
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/login (40.2ms)
+Completed 200 OK in 133ms (Views: 43.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2012-11-19 16:32:09 -0500
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e40wTlBbnqRCRhnOFK8LvJtVE8pwS6wj1LWn1GQ3xfA=", "user_session"=>{"email"=>"jdestradap@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users".email LIKE 'jdestradap@gmail.com') LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "users" SET "perishable_token" = 'dwNaEnKsYz9AlvhyP8Wm', "updated_at" = '2012-11-19 21:32:09.711027' WHERE "users"."id" = 2[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 114ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 16:32:09 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mCompany Load (0.3ms)[0m  SELECT * FROM "companies" INNER JOIN "companies_users" ON "companies".id = "companies_users".company_id WHERE ("companies_users".user_id = 2 )
+Rendered home/index.html.erb within layouts/application (81.2ms)
+Completed 200 OK in 7685ms (Views: 87.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2012-11-19 16:36:51 -0500
+  Processing by UserSessionsController#destroy as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Redirected to http://0.0.0.0:3000/login
+Completed 302 Found in 108ms
+
+
+Started GET "/login" for 127.0.0.1 at 2012-11-19 16:36:51 -0500
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/login (43.5ms)
+Completed 200 OK in 137ms (Views: 47.9ms | ActiveRecord: 0.2ms)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110617165851)
+Migrating to CreateCompanies (20110801205908)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("companies")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("companies_users")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (1.1ms)[0m  DELETE FROM "users" WHERE 1=1
+  [1m[36mAREL (1.3ms)[0m  [1mDELETE FROM "companies" WHERE 1=1[0m
+
+
+Started GET "/signup" for 127.0.0.1 at 2012-11-19 16:39:33 -0500
+  Processing by UsersController#new as HTML
+Rendered users/new.html.erb within layouts/login (421.6ms)
+Completed 200 OK in 530ms (Views: 426.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2012-11-19 16:40:43 -0500
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e40wTlBbnqRCRhnOFK8LvJtVE8pwS6wj1LWn1GQ3xfA=", "user"=>{"first_name"=>"Juan", "last_name"=>"Estrada", "email"=>"jdestradap@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('jdestradap@gmail.com')) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "users" WHERE ("users"."persistence_token" = '7326c87f1e3ffef70ecabb0221d26d70529f1114ce15ab969aed901b8a8cab72018d914613b334ca75d7a067b11e196d8e8f2957e8380fec8d3435c1b375624f') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."single_access_token" = '2KSzcT3FHPiWXBjX9P41') LIMIT 1[0m
+Rendered users/new.html.erb within layouts/login (106.8ms)
+Completed 200 OK in 299ms (Views: 110.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2012-11-19 16:40:51 -0500
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e40wTlBbnqRCRhnOFK8LvJtVE8pwS6wj1LWn1GQ3xfA=", "user"=>{"first_name"=>"Juan", "last_name"=>"Estrada", "email"=>"jdestradap@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('jdestradap@gmail.com')) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."persistence_token" = '63540e249ff3012b34dace0643d61eb0f403fb091473e362864960c03bbb33727109edc87c9278ec465c82607369c0eb0b0ca7ea49cda82829bf68876a9002ee') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "users" WHERE ("users"."single_access_token" = 'zrYztYNRZmfemuVIFCpW') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "crypted_password", "password_salt", "persistence_token", "single_access_token", "perishable_token", "created_at", "updated_at") VALUES ('Juan', 'Estrada', 'jdestradap@gmail.com', 'b648057265d94c00b6d9325fe9315d92534f5798207a6f19677b6c009e744b26cd687b2403c0ffac826f44cfa36798c75fdc19cf773166fc74e78dd7472da097', 'WnNGIfU5iO8zQqLswqN', '63540e249ff3012b34dace0643d61eb0f403fb091473e362864960c03bbb33727109edc87c9278ec465c82607369c0eb0b0ca7ea49cda82829bf68876a9002ee', 'zrYztYNRZmfemuVIFCpW', 'u92s3Pv7P6Ict1RQqeqj', '2012-11-19 21:40:51.281433', '2012-11-19 21:40:51.281433')
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 134ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-19 16:40:51 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."persistence_token" = '63540e249ff3012b34dace0643d61eb0f403fb091473e362864960c03bbb33727109edc87c9278ec465c82607369c0eb0b0ca7ea49cda82829bf68876a9002ee' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '63540e249ff3012b34dace0643d61eb0f403fb091473e362864960c03bbb33727109edc87c9278ec465c82607369c0eb0b0ca7ea49cda82829bf68876a9002ee' LIMIT 1
+  [1m[36mCompany Load (0.2ms)[0m  [1mSELECT * FROM "companies" INNER JOIN "companies_users" ON "companies".id = "companies_users".company_id WHERE ("companies_users".user_id = 3 )[0m
+Rendered home/index.html.erb within layouts/application (33.3ms)
+Completed 200 OK in 149ms (Views: 40.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/intuit/connect" for 127.0.0.1 at 2012-11-19 16:40:56 -0500
+  Processing by IntuitController#connect as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '63540e249ff3012b34dace0643d61eb0f403fb091473e362864960c03bbb33727109edc87c9278ec465c82607369c0eb0b0ca7ea49cda82829bf68876a9002ee' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Redirected to https://appcenter.intuit.com/Connect/Begin?oauth_token=qyprdMZMmh5c8ytPPe5XHyxNVrUEx1Xnk5tVW4OXFPGb41xA
+Completed 302 Found in 1467ms
+
+
+Started GET "/intuit/callback?oauth_token=qyprdMZMmh5c8ytPPe5XHyxNVrUEx1Xnk5tVW4OXFPGb41xA&oauth_verifier=jwnuaix&realmId=547147730&dataSource=QBO" for 127.0.0.1 at 2012-11-19 16:41:07 -0500
+  Processing by IntuitController#callback as HTML
+  Parameters: {"oauth_token"=>"qyprdMZMmh5c8ytPPe5XHyxNVrUEx1Xnk5tVW4OXFPGb41xA", "oauth_verifier"=>"jwnuaix", "realmId"=>"547147730", "dataSource"=>"QBO"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."persistence_token" = '63540e249ff3012b34dace0643d61eb0f403fb091473e362864960c03bbb33727109edc87c9278ec465c82607369c0eb0b0ca7ea49cda82829bf68876a9002ee' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mCompany Load (0.2ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."realm" = '547147730' LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "companies" ("name", "realm", "owner_id", "intuit_access_token", "intuit_access_secret", "is_qbo", "created_at", "updated_at") VALUES ('', '547147730', 3, 'lvprdtmzICOOldOgsJf5Q7FjfMcTlBjcVHVn9xiqC7QO8hDv', 'oSS6Vg3jxo2m6J5GQDswIk7u3kAdcmLAlNl0fZHD', 't', '2012-11-19 21:41:09.145066', '2012-11-19 21:41:09.145066')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "companies_users" ("user_id", "company_id") VALUES (3, 3)
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "companies" SET "name" = 'TimeStackCompany', "updated_at" = '2012-11-19 21:41:11.237958' WHERE "companies"."id" = 3[0m
+Rendered intuit/callback.html.erb (0.9ms)
+Completed 200 OK in 4053ms (Views: 3.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/company/3" for 127.0.0.1 at 2012-11-19 16:41:11 -0500
+  Processing by CompanyController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCompany Load (0.4ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+Rendered company/show.html.erb (5.4ms)
+Completed 200 OK in 108ms (Views: 8.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company/3/customers" for 127.0.0.1 at 2012-11-19 16:41:11 -0500
+  Processing by CompanyController#customers as 
+  Parameters: {"id"=>"3"}
+  [1m[36mCompany Load (0.2ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+Completed 500 Internal Server Error in 80ms
+
+Errno::ECONNREFUSED (Connection refused - Unable to connect to Redis on localhost:6379):
+  app/controllers/company_controller.rb:33:in `customers'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.4ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.2ms)
+
+
+Started GET "/company/3" for 127.0.0.1 at 2012-11-19 17:11:09 -0500
+  Processing by CompanyController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mCompany Load (0.2ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+Rendered company/show.html.erb (14645.1ms)
+Completed 200 OK in 31801ms (Views: 14648.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/company/3/customers" for 127.0.0.1 at 2012-11-19 17:11:42 -0500
+  Processing by CompanyController#customers as 
+  Parameters: {"id"=>"3"}
+  [1m[36mCompany Load (0.2ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+Completed 500 Internal Server Error in 86ms
+
+Errno::ECONNREFUSED (Connection refused - Unable to connect to Redis on localhost:6379):
+  app/controllers/company_controller.rb:33:in `customers'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.4ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.1ms)
+
+
+Started GET "/company/3" for 127.0.0.1 at 2012-11-19 17:22:55 -0500
+  Processing by CompanyController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCompany Load (0.2ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+Rendered company/show.html.erb (8320.7ms)
+Completed 200 OK in 275748ms (Views: 8323.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/company/3/customers" for 127.0.0.1 at 2012-11-19 17:27:31 -0500
+  Processing by CompanyController#customers as 
+  Parameters: {"id"=>"3"}
+  [1m[36mCompany Load (0.2ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+Completed 500 Internal Server Error in 78420ms
+
+Errno::ECONNREFUSED (Connection refused - Unable to connect to Redis on localhost:6379):
+  app/controllers/company_controller.rb:34:in `customers'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.8ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.3ms)
+
+
+Started GET "/company/3" for 127.0.0.1 at 2012-11-19 17:28:55 -0500
+  Processing by CompanyController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCompany Load (0.2ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+Rendered company/show.html.erb (13526.8ms)
+Completed 200 OK in 16353ms (Views: 13529.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/company/3/customers" for 127.0.0.1 at 2012-11-19 17:29:12 -0500
+  Processing by CompanyController#customers as 
+  Parameters: {"id"=>"3"}
+  [1m[36mCompany Load (0.2ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+Completed 500 Internal Server Error in 2186ms
+
+Errno::ECONNREFUSED (Connection refused - Unable to connect to Redis on localhost:6379):
+  app/controllers/company_controller.rb:34:in `customers'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.9ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.0ms)
+
+
+Started GET "/company/3" for 127.0.0.1 at 2012-11-19 17:29:41 -0500
+  Processing by CompanyController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mCompany Load (0.2ms)[0m  SELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1
+Rendered company/show.html.erb (2377.4ms)
+Completed 200 OK in 8625ms (Views: 2379.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/company/3/customers" for 127.0.0.1 at 2012-11-19 17:29:50 -0500
+  Processing by CompanyController#customers as 
+  Parameters: {"id"=>"3"}
+  [1m[36mCompany Load (0.2ms)[0m  [1mSELECT "companies".* FROM "companies" WHERE "companies"."id" = 3 LIMIT 1[0m
+Completed 500 Internal Server Error in 506780ms
+
+Errno::ECONNREFUSED (Connection refused - Unable to connect to Redis on localhost:6379):
+  app/controllers/company_controller.rb:34:in `customers'
+
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.9ms)
+Rendered /Users/jdestradap/.rvm/gems/ruby-1.9.3-p194@rentwb/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.8ms)

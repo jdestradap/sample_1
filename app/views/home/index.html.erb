@@ -1,0 +1,10 @@
+<h3>Your Companies</h3>
+<% if current_user.companies.length > 0 %>
+<% current_user.companies.each do |c| %>
+<%= link_to c.name, c %><br />
+<% end %>
+Add another! <ipp:connectToIntuit></ipp:ConnectToIntuit>
+<% else %>
+You don't have any! Add one! <br />
+<ipp:connectToIntuit></ipp:connectToIntuit>
+<% end %>

@@ -1,0 +1,8 @@
+development:
+  intuit_application_token: d408f642be19ab4c19bb151b7d6fa3f58747
+  intuit_consumer_key: qyprdrOYGJFDy0Ohm3scRnlnRy42fy
+  intuit_consumer_secret: 4cQiZWvyWKWfHZVrR1P22d8WUYMgg02m6iBemCrQ
+production: 
+  intuit_application_token: insert_here
+  intuit_consumer_key: insert_here
+  intuit_consumer_secret: inser_here

@@ -1,0 +1,265 @@
+/* line 1, ../../app/stylesheets/reset.sass */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* line 10, ../../app/stylesheets/reset.sass */
+body {
+  line-height: 1;
+}
+
+/* line 13, ../../app/stylesheets/reset.sass */
+ol, ul {
+  list-style: none;
+}
+
+/* line 16, ../../app/stylesheets/reset.sass */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 20, ../../app/stylesheets/reset.sass */
+blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 25, ../../app/stylesheets/reset.sass */
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* line 29, ../../app/stylesheets/reset.sass */
+ins {
+  text-decoration: none;
+}
+
+/* line 32, ../../app/stylesheets/reset.sass */
+del {
+  text-decoration: line-through;
+}
+
+/* line 35, ../../app/stylesheets/reset.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 39, ../../app/stylesheets/reset.sass */
+.clear {
+  clear: both;
+}
+
+/* line 42, ../../app/stylesheets/reset.sass */
+body {
+  font: 13px/1.5 "Lucinda Grande", Arial, Helvetica, Verdana, "Liberation Sans", FreeSans, sans-serif;
+}
+
+/* line 45, ../../app/stylesheets/reset.sass */
+a:focus {
+  outline: 1px dotted invert;
+}
+
+/* line 48, ../../app/stylesheets/reset.sass */
+hr {
+  border-color: #cccccc;
+  border-style: solid;
+  border-width: 1px 0 0;
+  clear: both;
+  height: 0;
+}
+
+/* line 55, ../../app/stylesheets/reset.sass */
+h1 {
+  font-size: 25px;
+}
+
+/* line 58, ../../app/stylesheets/reset.sass */
+h2 {
+  font-size: 21px;
+}
+
+/* line 61, ../../app/stylesheets/reset.sass */
+h3 {
+  font-size: 19px;
+}
+
+/* line 64, ../../app/stylesheets/reset.sass */
+h4 {
+  font-size: 17px;
+}
+
+/* line 67, ../../app/stylesheets/reset.sass */
+h5 {
+  font-size: 15px;
+}
+
+/* line 70, ../../app/stylesheets/reset.sass */
+h6 {
+  font-size: 14px;
+}
+
+/* line 73, ../../app/stylesheets/reset.sass */
+ol {
+  list-style: decimal;
+}
+
+/* line 76, ../../app/stylesheets/reset.sass */
+ul {
+  list-style: square;
+}
+
+/* line 79, ../../app/stylesheets/reset.sass */
+li {
+  margin-left: 30px;
+}
+
+/* line 82, ../../app/stylesheets/reset.sass */
+p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset {
+  margin-bottom: 10px;
+}
+
+/* line 85, ../../app/stylesheets/reset.sass */
+body {
+  font-size: 75%;
+  color: #222222;
+  background: white;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+/* line 4, ../../app/stylesheets/login.sass */
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 9, ../../app/stylesheets/login.sass */
+#login-header {
+  text-align: center;
+  color: black;
+}
+
+/* line 13, ../../app/stylesheets/login.sass */
+#login {
+  background: white;
+  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  z-index: 200;
+}
+
+/* line 24, ../../app/stylesheets/login.sass */
+#login-inner {
+  width: 500px;
+  background: white;
+  padding: 10px;
+  margin: 0 auto;
+}
+/* line 29, ../../app/stylesheets/login.sass */
+#login-inner #new_user_session, #login-inner #new_user {
+  width: 500px;
+}
+/* line 32, ../../app/stylesheets/login.sass */
+#login-inner #new_user_session li.input input, #login-inner #new_user li.input input {
+  padding: 3px 5px;
+  font-size: 14px;
+}
+/* line 35, ../../app/stylesheets/login.sass */
+#login-inner #new_user_session li.input label, #login-inner #new_user li.input label {
+  font-size: 14px;
+  text-align: right;
+  width: 24%;
+  padding-right: 1%;
+}
+/* line 43, ../../app/stylesheets/login.sass */
+#login-inner #new_user_session li.commit.button input, #login-inner #new_user li.commit.button input {
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border: solid 1px #999999;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#dddddd));
+  color: #333333;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-shadow: 0px 1px 1px white;
+  line-height: 1;
+  padding: 8px 14px;
+  font-size: 20px;
+  font-weight: bold;
+}
+/* line 39, ../../app/stylesheets/mixins.sass */
+#login-inner #new_user_session li.commit.button input:hover, #login-inner #new_user li.commit.button input:hover {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f8f8f8), to(#dddddd));
+}
+/* line 41, ../../app/stylesheets/mixins.sass */
+#login-inner #new_user_session li.commit.button input:active, #login-inner #new_user li.commit.button input:active {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cccccc), to(#dddddd));
+}
+/* line 45, ../../app/stylesheets/login.sass */
+#login-inner #new_user_session li.commit.button.inline, #login-inner #new_user li.commit.button.inline {
+  display: inline-block;
+}
+/* line 47, ../../app/stylesheets/login.sass */
+#login-inner a.button {
+  padding: 6px 10px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border: solid 1px #999999;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#dddddd));
+  color: #333333;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-shadow: 0px 1px 1px white;
+  line-height: 1;
+}
+/* line 13, ../../app/stylesheets/mixins.sass */
+#login-inner a.button:hover {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f8f8f8), to(#dddddd));
+}
+/* line 15, ../../app/stylesheets/mixins.sass */
+#login-inner a.button:active {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cccccc), to(#dddddd));
+}
+/* line 17, ../../app/stylesheets/mixins.sass */
+#login-inner a.button.large {
+  padding: 12px 20px;
+  font-size: 21px;
+  font-weight: bold;
+}
+/* line 21, ../../app/stylesheets/mixins.sass */
+#login-inner a.button.scaled {
+  -webkit-transform: scale(2);
+  -webkit-transform-origin: bottom left;
+}
+/* line 49, ../../app/stylesheets/login.sass */
+#login-inner #alternate-link {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* line 53, ../../app/stylesheets/login.sass */
+#map_canvas {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}

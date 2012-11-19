@@ -1,0 +1,10 @@
+javascripts:
+  app:
+    - public/javascripts/*.js
+stylesheets:
+  app:
+    - public/stylesheets/application.css
+    - public/stylesheets/formtastic.css
+  login:
+    - public/stylesheets/login.css
+    - public/stylesheets/formtastic.css        
